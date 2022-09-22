@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="Estilo.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .slider {
+        width: 800px;
+        height: 500px;
+        overflow: hidden;
+      }
+      .slides {
+        display: flex;
+        width: 300%;
+        height: 100%;
+      }
+      .slide{
+        width: 33.33%;
+        transition: 1s;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+      }
+      div.navigation {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      input {
+        display: none;
+      }
+
+      .manual-btn{
+        display: inline-block;
+        padding: 8px;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .manual-btn:not(:last-child){
+        margin-right: 32px;
+      }
+      .manual-btn:hover{
+        background-color: white;
+        transition: .4s;
+      }
+      #radio1:checked ~ .estado-inicial{
+        margin-left: 0;
+      }
+      #radio2:checked ~ .estado-inicial{
+        margin-left: -33.33%;
+      }
+      #radio3:checked ~ .estado-inicial{
+        margin-left: -66.66%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="slides">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+
+        <div class="slide estado-inicial">
+          <img src="image/image/img1.jpg" alt="slide1" />
+        </div>
+        <div class="slide">
+          <img src="image/image/img2.jpg" alt="slide2" />
+        </div>
+        <div class="slide">
+          <img src="image/image/img3.jpg" alt="slide3" />
+        </div>
+      </div>
+
+      <div class="navigation">
+            <label class="manual-btn" for="radio1"></label>
+            <label class="manual-btn" for="radio2"></label>
+            <label class="manual-btn" for="radio3"></label>
+      </div>
+    </div>
+  </body>
+</html>
